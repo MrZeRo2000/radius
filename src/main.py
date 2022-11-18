@@ -98,7 +98,7 @@ def run(chrome_driver_path, url, user_name, password):
             logger.info("Waiting for log in")
 
             wait_login = WebDriverWait(driver, 10)
-            login_result = wait_login.until(EC.url_contains("loginDone  "))
+            login_result = wait_login.until(EC.url_contains("loginDone") or EC.url_contains("msftconnecttest"))
 
             logger.info(f"Login result: {login_result}")
 
